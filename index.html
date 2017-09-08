@@ -14,10 +14,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
     <script src="app/app.module.js"></script>
+    <script src="app/main/controller.js"></script>
+    <script src="app/list/service.js"></script>
     <script src="app/app.run.js"></script>
     <script src="app/app.config.js"></script>
     <script type="text/ng-template" id="main.html">
-        <div></div>
+        <div>
+            <input ng-model="vm.newList.title"/>
+            <button ng-click="vm.onAddListClick()">Add</button>
+            <div ng-repeat="list in vm.lists track by $index">
+                <span ng-bind="list.title"></span>
+            </div>
+        </div>
     </script>
 </body>
 </html>
